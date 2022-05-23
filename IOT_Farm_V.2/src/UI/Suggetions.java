@@ -6,7 +6,7 @@
 package UI;
 
 import Core.Background.Set_Suggetions;
-import com.raven.swing.noticeboard.ModelNoticeBoard;
+import com.deshan.swing.noticeboard.ModelNoticeBoard;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -72,21 +72,21 @@ public class Suggetions extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         bar_1 = new progressbar.ProgressBarCustom();
-        noticeBoard = new com.raven.swing.noticeboard.NoticeBoard();
+        noticeBoard = new com.deshan.swing.noticeboard.NoticeBoard();
         roundPanel8 = new com.deshan.swing.RoundPanel();
         jLabel4 = new javax.swing.JLabel();
         progressBarCustom5 = new progressbar.ProgressBarCustom();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         bar_2 = new progressbar.ProgressBarCustom();
-        noticeBoard1 = new com.raven.swing.noticeboard.NoticeBoard();
+        noticeBoard1 = new com.deshan.swing.noticeboard.NoticeBoard();
         roundPanel9 = new com.deshan.swing.RoundPanel();
         jLabel8 = new javax.swing.JLabel();
         progressBarCustom6 = new progressbar.ProgressBarCustom();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         bar_3 = new progressbar.ProgressBarCustom();
-        noticeBoard2 = new com.raven.swing.noticeboard.NoticeBoard();
+        noticeBoard2 = new com.deshan.swing.noticeboard.NoticeBoard();
 
         setBackground(new java.awt.Color(242, 242, 242));
         setBorder(null);
@@ -306,9 +306,9 @@ public class Suggetions extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private com.raven.swing.noticeboard.NoticeBoard noticeBoard;
-    private com.raven.swing.noticeboard.NoticeBoard noticeBoard1;
-    private com.raven.swing.noticeboard.NoticeBoard noticeBoard2;
+    private com.deshan.swing.noticeboard.NoticeBoard noticeBoard;
+    private com.deshan.swing.noticeboard.NoticeBoard noticeBoard1;
+    private com.deshan.swing.noticeboard.NoticeBoard noticeBoard2;
     private progressbar.ProgressBarCustom progressBarCustom4;
     private progressbar.ProgressBarCustom progressBarCustom5;
     private progressbar.ProgressBarCustom progressBarCustom6;

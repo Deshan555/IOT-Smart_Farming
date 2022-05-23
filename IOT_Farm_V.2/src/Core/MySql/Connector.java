@@ -1,5 +1,6 @@
 package Core.MySql;
 
+import Core.SQL_Lite3.Load_Settings;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -10,15 +11,15 @@ public class Connector
     {
         Connection conn = null;
         
-        String host = "localhost";
+        String host = Load_Settings.load_data("HOST");
         
-        String port = "3306";
+        String port = Load_Settings.load_data("PORT");
         
-        String user_name = "root";
+        String user_name = Load_Settings.load_data("UNAME");
         
-        String password = "";
+        String password = Load_Settings.load_data("PASSWORD");
         
-        String db_name = "data_store";
+        String db_name = Load_Settings.load_data("DBNAME");
 
         String database_url = "jdbc:mysql://"+host+":"+port+"/"+db_name+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 

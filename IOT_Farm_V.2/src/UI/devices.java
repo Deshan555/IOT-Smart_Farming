@@ -8,7 +8,7 @@ package UI;
 import Core.Background.Active_Status;
 import Core.Background.Bugs_Log;
 import Core.MySql.Connector;
-import com.raven.model.ModelStaff;
+import com.deshan.model.ModelStaff;
 import java.awt.AlphaComposite;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -288,7 +288,7 @@ public class devices extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         roundPanel2 = new com.deshan.swing.RoundPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        table2 = new com.raven.swing.Table();
+        table2 = new com.deshans.swing.Table();
         jLabel2 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -518,6 +518,6 @@ public class devices extends javax.swing.JInternalFrame {
     private com.deshan.swing.RoundPanel roundPanel3;
     private com.deshan.swing.RoundPanel roundPanel4;
     private com.deshan.swing.RoundPanel roundPanel5;
-    private com.raven.swing.Table table2;
+    private com.deshans.swing.Table table2;
     // End of variables declaration//GEN-END:variables
 }

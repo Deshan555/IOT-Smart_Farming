@@ -41,7 +41,7 @@ public class Conditions extends javax.swing.JInternalFrame {
  
     public static String date = get_localDate.LocalDate();
     
-    //public static String date = "2022-04-30";
+    //public static String date = "2022-05-10";
     
     public Conditions() 
     {
@@ -150,7 +150,7 @@ public class Conditions extends javax.swing.JInternalFrame {
                 
                     String time =  rs.getString("record_time");
                 
-                    dataset.setValue(Double.parseDouble(value), "temperature(F)", date+" : "+time);
+                    dataset.setValue(Double.parseDouble(value), "temperature(C)", date+" : "+time);
                 }
                 
                 x++;
@@ -165,7 +165,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             System.out.println(ERROR);
         }
         
-        JFreeChart chart = ChartFactory.createBarChart("","date and time","temperature(F)", dataset, PlotOrientation.HORIZONTAL, false,true,false);
+        JFreeChart chart = ChartFactory.createBarChart("","date and time","temperature(C)", dataset, PlotOrientation.HORIZONTAL, false,true,false);
         
         CategoryPlot categoryPlot = chart.getCategoryPlot();
         //categoryPlot.setRangeGridlinePaint(Color.BLUE);
@@ -220,7 +220,7 @@ public class Conditions extends javax.swing.JInternalFrame {
                 
                     String time =  rs.getString("record_time");
                 
-                    dataset.setValue(Double.parseDouble(value), "temperature(F)", date+" : "+time);
+                    dataset.setValue(Double.parseDouble(value), "temperature(C)", date+" : "+time);
                 }
                 
                 x++;
@@ -236,7 +236,7 @@ public class Conditions extends javax.swing.JInternalFrame {
         }
         
         //create chart
-        JFreeChart linechart = ChartFactory.createLineChart("","date and time","temperature(F)",dataset, PlotOrientation.VERTICAL, false,true,false);
+        JFreeChart linechart = ChartFactory.createLineChart("","date and time","temperature(C)",dataset, PlotOrientation.VERTICAL, false,true,false);
         
         //create plot object
          CategoryPlot lineCategoryPlot = linechart.getCategoryPlot();
@@ -282,7 +282,7 @@ public class Conditions extends javax.swing.JInternalFrame {
                 
                 list.add(new ModelChartLine("Data", Double.parseDouble(value)));
                 
-                pane.append("Temp : "+value+"F ("+date+")\n\n");
+                pane.append("Temp : "+value+"C ("+date+")\n\n");
             }
             
             connection.close();
@@ -332,7 +332,7 @@ public class Conditions extends javax.swing.JInternalFrame {
                 
                 String time =  rs.getString("record_time");
                 
-                dataset.setValue(Double.parseDouble(value), "heat index(F)", date+" : "+time);
+                dataset.setValue(Double.parseDouble(value), "heat index(C)", date+" : "+time);
                 }
                 
                 x++;
@@ -347,7 +347,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             System.out.println(ERROR);
         }
         
-        JFreeChart chart = ChartFactory.createBarChart("","date and time","heat index(F)", dataset, PlotOrientation.HORIZONTAL, false,true,false);
+        JFreeChart chart = ChartFactory.createBarChart("","date and time","heat index(C)", dataset, PlotOrientation.HORIZONTAL, false,true,false);
         
         CategoryPlot categoryPlot = chart.getCategoryPlot();
         //categoryPlot.setRangeGridlinePaint(Color.BLUE);
@@ -402,7 +402,7 @@ public class Conditions extends javax.swing.JInternalFrame {
                 
                 String time =  rs.getString("record_time");
                 
-                dataset.setValue(Double.parseDouble(value), "heat index(F)", date+" : "+time);
+                dataset.setValue(Double.parseDouble(value), "heat index(C)", date+" : "+time);
                 }
                 
                 x++;
@@ -419,7 +419,7 @@ public class Conditions extends javax.swing.JInternalFrame {
         }
         
         //create chart
-        JFreeChart linechart = ChartFactory.createLineChart("","date and time","heat index(F)",dataset, PlotOrientation.VERTICAL, false,true,false);
+        JFreeChart linechart = ChartFactory.createLineChart("","date and time","heat index(C)",dataset, PlotOrientation.VERTICAL, false,true,false);
         
         //create plot object
          CategoryPlot lineCategoryPlot = linechart.getCategoryPlot();
@@ -467,7 +467,7 @@ public class Conditions extends javax.swing.JInternalFrame {
                 
                 lists.add(new ModelChartLine("Data", Double.parseDouble(value)));
                 
-                pane1.append("heat index : "+value+"F ("+date+")\n\n");
+                pane1.append("heat index : "+value+"C ("+date+")\n\n");
             }
             
             connection.close();
@@ -908,7 +908,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             
             while(rs.next())
             {                
-                jLabel5.setText("Max Temperature (f) : "+rs.getString("MAX(temperature)"));
+                jLabel5.setText("Max Temperature (C) : "+rs.getString("MAX(temperature)"));
                 
                 jLabel6.setText("Data Extracted Date : "+date);
             }
@@ -937,7 +937,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             
             while(rs.next())
             {                
-                jLabel7.setText("Min Temperature (f) : "+rs.getString("MIN(temperature)"));
+                jLabel7.setText("Min Temperature (C) : "+rs.getString("MIN(temperature)"));
                 
                 jLabel4.setText("Data Extracted Date : "+date);
                
@@ -968,7 +968,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             
             while(rs.next())
             {                
-                jLabel10.setText("Max Heat Index(f) : "+rs.getString("MAX(heat_index)"));
+                jLabel10.setText("Max Heat Index(C) : "+rs.getString("MAX(heat_index)"));
                 
                 jLabel11.setText("Data Extracted Date : "+date);
             }
@@ -997,7 +997,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             
             while(rs.next())
             {                
-                jLabel12.setText("Min HeatIndex(f) : "+rs.getString("MIN(heat_index)"));
+                jLabel12.setText("Min HeatIndex(C) : "+rs.getString("MIN(heat_index)"));
                 
                 jLabel9.setText("Data Extracted Date : "+date);
             }

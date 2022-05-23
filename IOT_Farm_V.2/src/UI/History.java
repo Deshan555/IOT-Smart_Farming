@@ -130,7 +130,6 @@ public class History extends javax.swing.JInternalFrame {
         roundPanel17 = new com.deshan.swing.RoundPanel();
         jLabel7 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
         roundPanel12 = new com.deshan.swing.RoundPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
@@ -701,7 +700,6 @@ public class History extends javax.swing.JInternalFrame {
 
         jTextField9.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
         jTextField9.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField9.setText("Search Animal By Tag ID..");
         jTextField9.setBorder(null);
         jTextField9.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -716,23 +714,22 @@ public class History extends javax.swing.JInternalFrame {
                 jTextField9ActionPerformed(evt);
             }
         });
-
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jTextField9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField9KeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout roundPanel17Layout = new javax.swing.GroupLayout(roundPanel17);
         roundPanel17.setLayout(roundPanel17Layout);
         roundPanel17Layout.setHorizontalGroup(
             roundPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel17Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(405, 405, 405)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(801, Short.MAX_VALUE))
+                .addContainerGap(418, Short.MAX_VALUE))
         );
         roundPanel17Layout.setVerticalGroup(
             roundPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -741,9 +738,7 @@ public class History extends javax.swing.JInternalFrame {
                 .addComponent(jLabel7))
             .addGroup(roundPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(roundPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField9)
-                    .addComponent(jSeparator3))
+                .addComponent(jTextField9)
                 .addContainerGap())
         );
 
@@ -1460,11 +1455,24 @@ public class History extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
-        // TODO add your handling code here:
+        
+        if(jTextField8.getText().equals("Enter Employee ID"))
+        {
+            jTextField8.setText("");
+            
+            jTextField8.setForeground(new Color(102,102,102));
+        }
     }//GEN-LAST:event_jTextField9FocusGained
 
     private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
-        // TODO add your handling code here:
+        
+        
+        if(jTextField8.getText().equals(""))
+        {
+            jTextField8.setText("Enter Employee ID");
+            
+            jTextField8.setForeground(new Color(102,102,102));
+        }
     }//GEN-LAST:event_jTextField9FocusLost
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -1587,6 +1595,39 @@ public class History extends javax.swing.JInternalFrame {
         load_user(ID);
         
     }//GEN-LAST:event_tableMouseClicked
+
+    private void jTextField9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9KeyReleased
+      
+        if(jTextField9.getText().length() == 10)
+        {
+        Connection connection = Connector.connection();
+        
+        String SQL = "SELECT emp_id, emp_name,  emp_nic,  mobile_number, emp_type FROM employee where emp_id = "+jTextField9.getText()+";";
+        
+        try
+        {
+            Statement stmt = connection.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            table.setModel(DbUtils.resultSetToTableModel(rs));
+           
+        }
+        catch(SQLException ERROR)
+         {
+           Core.Background.Bugs_Log.exceptions(String.valueOf(ERROR));
+           
+           home Home = new home();
+           
+           Home.notifications("System Error : SQL Server Offline or System Error", 2);  
+         } 
+        }
+        else if(jTextField9.getText().length() == 0)
+        {
+            table_load();
+        }
+        
+    }//GEN-LAST:event_jTextField9KeyReleased
 
     
     public void delete_user()
@@ -1789,7 +1830,6 @@ public class History extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;

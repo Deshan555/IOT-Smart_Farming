@@ -5,7 +5,7 @@
  */
 package UI;
 
-import com.raven.model.ModelStaff;
+import com.deshan.model.ModelStaff;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -65,7 +65,7 @@ public class devices1 extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         roundPanel2 = new com.deshan.swing.RoundPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        table2 = new com.raven.swing.Table();
+        table2 = new com.deshans.swing.Table();
 
         setBackground(new java.awt.Color(242, 242, 242));
         setBorder(null);
@@ -137,6 +137,6 @@ public class devices1 extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private com.deshan.swing.RoundPanel roundPanel2;
-    private com.raven.swing.Table table2;
+    private com.deshans.swing.Table table2;
     // End of variables declaration//GEN-END:variables
 }

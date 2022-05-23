@@ -5,6 +5,7 @@
  */
 package UI;
 
+import Core.Background.Cache_Reader;
 import Core.MySql.Load_BoxA;
 import Core.MySql.Load_BoxB;
 import static Core.SQL_Lite3.Load_Crops.load_condition;
@@ -86,28 +87,55 @@ public class Crop extends javax.swing.JInternalFrame {
             if((current_temp > min_temp) && ( current_temp < max_temp))
             {
                 jLabel14.setText("Tempureature Status Normal");
+                
+                jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/ok_25px.png")));
             }
             else
             {
                 jLabel14.setText("Problem With Tempureature");
+                
+                jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png")));
             }
             
             if((current_humidity > min_humidity) && (current_humidity < max_humidity))
             {
                 jLabel21.setText("Humidity Status Normal");
+                
+                jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/ok_25px.png")));
             }
             else
             {
                 jLabel21.setText("Problem With Humidity");
+                
+                jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png")));
             }
             
             if((soil_mois > min_soil) && (soil_mois < max_soil))
             {
                 jLabel9.setText("Soil Moisture Status Normal");
+                
+                jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/ok_25px.png")));
             }
             else
             {
                 jLabel9.setText("Problem With Soil Moisture");
+                
+                jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png")));
+            }
+            
+            try
+            {
+                String crops = Cache_Reader.data("Crop.dat");
+                
+                jLabel12.setText("RELATED CROP "+crops.toUpperCase());
+                
+                jLabel19.setText("RELATED CROP "+crops.toUpperCase());
+                
+                jLabel7.setText("RELATED CROP "+crops.toUpperCase());
+            }
+            catch(Exception error)
+            {
+                Core.Background.Bugs_Log.exceptions(String.valueOf(error));
             }
         }
         catch(SQLException error)
@@ -205,7 +233,7 @@ public class Crop extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/corn_25px.png"))); // NOI18N
         jLabel7.setText("Sprinkler System Offline");
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -302,7 +330,7 @@ public class Crop extends javax.swing.JInternalFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 102));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/corn_25px.png"))); // NOI18N
         jLabel12.setText("Sprinkler System Offline");
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -311,7 +339,7 @@ public class Crop extends javax.swing.JInternalFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(102, 102, 102));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/ok_25px.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/minus_28px.png"))); // NOI18N
         jLabel14.setText("Tempureature Status Normal");
 
         javax.swing.GroupLayout roundPanel5Layout = new javax.swing.GroupLayout(roundPanel5);
@@ -399,7 +427,7 @@ public class Crop extends javax.swing.JInternalFrame {
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 102, 102));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/corn_25px.png"))); // NOI18N
         jLabel19.setText("Sprinkler System Offline");
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

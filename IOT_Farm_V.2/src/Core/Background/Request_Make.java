@@ -61,6 +61,8 @@ public class Request_Make
         Switch_Status.save_Status("3", "A");
         
         open.link_install(link_3+"/on");
+        
+        System.out.println(link_3);
                 
         open.start();
     }
@@ -70,19 +72,9 @@ public class Request_Make
         Switch_Status.save_Status("3", "D");
         
         open.link_install(link_3+"/off");
+        
+        System.out.println(link_3);
                 
         open.start();
     }
-    
-    public static void main(String[] args)
-    {
-        Request_Make request = new Request_Make();
-        
-        request.switch_3_turnOff();
-        
-        Request_Make request_2 = new Request_Make();
-        
-        request_2.switch_1_turnOff();
-    }
-    
 }

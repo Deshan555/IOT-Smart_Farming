@@ -9,8 +9,7 @@ import Core.Background.Bugs_Log;
 import Core.Background.ID_Genarator;
 import Core.Background.Upcomming_Events;
 import Core.MySql.Connector;
-import com.raven.model.ModelStaff;
-import com.raven.swing.noticeboard.ModelNoticeBoard;
+import com.deshan.model.ModelStaff;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,7 +64,7 @@ public class task extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         roundPanel7 = new com.deshan.swing.RoundPanel();
-        noticeBoard = new com.raven.swing.noticeboard.NoticeBoard();
+        noticeBoard = new com.deshan.swing.noticeboard.NoticeBoard();
         jLabel14 = new javax.swing.JLabel();
         roundPanel10 = new com.deshan.swing.RoundPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -75,10 +74,12 @@ public class task extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         roundPanel12 = new com.deshan.swing.RoundPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -99,7 +100,7 @@ public class task extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        table2 = new com.raven.swing.Table();
+        table2 = new com.deshans.swing.Table();
 
         jLabel7.setText("jLabel7");
 
@@ -115,7 +116,7 @@ public class task extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText("ADD EVENT");
+        jLabel6.setText("ICEBURG KEEP EVENTS ");
 
         roundPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -133,7 +134,7 @@ public class task extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(roundPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(noticeBoard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 1227, Short.MAX_VALUE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         roundPanel7Layout.setVerticalGroup(
@@ -152,11 +153,11 @@ public class task extends javax.swing.JInternalFrame {
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel11.setText("HEY....");
+        jLabel11.setText("ICEBURG");
 
-        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 16)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 30)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel12.setText("WELCOME TO EVENTS,");
+        jLabel12.setText("KEEP EVENTS");
 
         javax.swing.GroupLayout roundPanel10Layout = new javax.swing.GroupLayout(roundPanel10);
         roundPanel10.setLayout(roundPanel10Layout);
@@ -164,11 +165,11 @@ public class task extends javax.swing.JInternalFrame {
             roundPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(roundPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
                 .addContainerGap())
         );
         roundPanel10Layout.setVerticalGroup(
@@ -177,12 +178,12 @@ public class task extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(roundPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(roundPanel10Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(30, 30, 30)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 38, Short.MAX_VALUE))
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -190,15 +191,20 @@ public class task extends javax.swing.JInternalFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/history/2002.i039.018_remote_management_distant_work_isometric_icons-15.jpg"))); // NOI18N
 
-        jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(102, 102, 102));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("TOTAL EVENTS");
+        jLabel17.setText("TOTAL");
 
-        jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 80)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(102, 102, 102));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("29 AVAILABLE");
+        jLabel18.setText("29");
+
+        jLabel21.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("EVENTS");
 
         javax.swing.GroupLayout roundPanel11Layout = new javax.swing.GroupLayout(roundPanel11);
         roundPanel11.setLayout(roundPanel11Layout);
@@ -206,94 +212,106 @@ public class task extends javax.swing.JInternalFrame {
             roundPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(roundPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)))
         );
         roundPanel11Layout.setVerticalGroup(
             roundPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
             .addGroup(roundPanel11Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(52, 52, 52)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(roundPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         roundPanel12.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/history/2002.i039.018_remote_management_distant_work_isometric_icons-13.jpg"))); // NOI18N
 
-        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 80)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("TOTAL 06 EVENTS");
+        jLabel19.setText("06 ");
 
-        jLabel20.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 36)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(102, 102, 102));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("UPCOMMING ");
+        jLabel20.setText("EVENTS");
+
+        jLabel22.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("UPCOMMING");
 
         javax.swing.GroupLayout roundPanel12Layout = new javax.swing.GroupLayout(roundPanel12);
         roundPanel12.setLayout(roundPanel12Layout);
         roundPanel12Layout.setHorizontalGroup(
             roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(268, 268, 268))
         );
         roundPanel12Layout.setVerticalGroup(
             roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(roundPanel12Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(roundPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(roundPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(roundPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(roundPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(roundPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(roundPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 403, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addComponent(jLabel6)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(roundPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(roundPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(roundPanel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(roundPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(roundPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(roundPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(roundPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -308,7 +326,7 @@ public class task extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("ADD EVENT");
+        jLabel1.setText("ADD EVENTS");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 24, 199, -1));
 
         roundPanel2.setBackground(new java.awt.Color(242, 242, 242));
@@ -447,7 +465,10 @@ public class task extends javax.swing.JInternalFrame {
 
         jPanel5.add(roundPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 83, -1, 63));
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/registration_30px.png"))); // NOI18N
+        jLabel4.setText("ADD CURRENT EVENT");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -456,6 +477,7 @@ public class task extends javax.swing.JInternalFrame {
         jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 190, 30));
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 554, 350, 40));
 
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, -1, 630));
 
@@ -479,7 +501,7 @@ public class task extends javax.swing.JInternalFrame {
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel8.setText("ALL EVENTS");
+        jLabel8.setText("EVENTS MANEGAR");
 
         table2.setForeground(new java.awt.Color(255, 255, 255));
         table2.setModel(new javax.swing.table.DefaultTableModel(
@@ -513,7 +535,7 @@ public class task extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1247, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -591,7 +613,19 @@ public class task extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_table2MouseClicked
 
-     public void add_task()
+    public void table_clean()
+    {
+        DefaultTableModel model = (DefaultTableModel) table2.getModel();
+        
+        int rowCount = model.getRowCount();
+                
+        for (int i = rowCount - 1; i >= 0; i--) 
+        {
+            model.removeRow(i);
+        }
+    }
+    
+    public void add_task()
     {
        Connection conn = Connector.connection();
        
@@ -630,6 +664,8 @@ public class task extends javax.swing.JInternalFrame {
            Home.notifications("Your Reminder Saved Successfully, System Will Notify Related Dates",1);
                       
            Upcomming_Events.noticeboard_update();
+           
+           initData();
        }
        catch(Exception error)
        {
@@ -639,7 +675,7 @@ public class task extends javax.swing.JInternalFrame {
        }
     }
     
-    private void initData() 
+    public void initData() 
     {
         DefaultTableModel model = (DefaultTableModel) table2.getModel();
         
@@ -650,6 +686,8 @@ public class task extends javax.swing.JInternalFrame {
         int count = 0;
         
         Connection connection = Connector.connection();
+        
+        table_clean();
         
         try
         {
@@ -711,6 +749,8 @@ public class task extends javax.swing.JInternalFrame {
     public static javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -729,7 +769,7 @@ public class task extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private tabbed.MaterialTabbed materialTabbed1;
-    public static com.raven.swing.noticeboard.NoticeBoard noticeBoard;
+    public static com.deshan.swing.noticeboard.NoticeBoard noticeBoard;
     private com.deshan.swing.RoundPanel roundPanel10;
     private com.deshan.swing.RoundPanel roundPanel11;
     private com.deshan.swing.RoundPanel roundPanel12;
@@ -738,6 +778,6 @@ public class task extends javax.swing.JInternalFrame {
     private com.deshan.swing.RoundPanel roundPanel4;
     private com.deshan.swing.RoundPanel roundPanel5;
     private com.deshan.swing.RoundPanel roundPanel7;
-    private com.raven.swing.Table table2;
+    private com.deshans.swing.Table table2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,7 @@
 package Core.Background;
 
 import Core.MySql.Connector;
-import com.raven.swing.noticeboard.ModelNoticeBoard;
+import com.deshan.swing.noticeboard.ModelNoticeBoard;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -61,13 +61,8 @@ public class Upcomming_Events
        
        UI.task.jLabel14.setText("UPCOMMING EVENTS ("+events+")");
        
-       UI.task.jLabel18.setText(counter+" AVAILABLE");
+       UI.task.jLabel18.setText("0"+String.valueOf(counter));
        
-       UI.task.jLabel19.setText("TOTAL "+events+" EVENTS");
+       UI.task.jLabel19.setText("0"+String.valueOf(events));
     }
-
-    public static void main(String[] args)
-    {
-        noticeboard_update();
-    }    
 }

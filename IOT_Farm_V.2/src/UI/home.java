@@ -5,6 +5,9 @@
  */
 package UI;
 
+import Core.Background.automation;
+import Core.Background.boot_Up;
+import Core.Background.py_executer;
 import com.deshan.notifications.Notification;
 
 /**
@@ -14,7 +17,8 @@ import com.deshan.notifications.Notification;
 public class home extends javax.swing.JFrame {
 
 
-    public home() {
+    public home()
+    {
         initComponents();
         
         pane.removeAll();
@@ -22,6 +26,14 @@ public class home extends javax.swing.JFrame {
         Welcome screen = new Welcome();
 
         pane.add(screen).setVisible(true);
+         
+        automation Automatic = new automation();
+        
+        Automatic.tasker();
+        
+        py_executer execute_python = new py_executer();
+        
+        execute_python.start();
     }
 
     /**

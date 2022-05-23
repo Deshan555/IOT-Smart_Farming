@@ -163,7 +163,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="com.raven.swing.noticeboard.NoticeBoard" name="noticeBoard">
+        <Component class="com.deshan.swing.noticeboard.NoticeBoard" name="noticeBoard">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -266,7 +266,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="com.raven.swing.noticeboard.NoticeBoard" name="noticeBoard1">
+        <Component class="com.deshan.swing.noticeboard.NoticeBoard" name="noticeBoard1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -370,7 +370,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="com.raven.swing.noticeboard.NoticeBoard" name="noticeBoard2">
+        <Component class="com.deshan.swing.noticeboard.NoticeBoard" name="noticeBoard2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>

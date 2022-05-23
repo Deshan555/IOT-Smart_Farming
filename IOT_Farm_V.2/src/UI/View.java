@@ -7,7 +7,7 @@ package UI;
 
 import Core.Background.Bugs_Log;
 import Core.MySql.Connector;
-import com.raven.swing.noticeboard.ModelNoticeBoard;
+import com.deshan.swing.noticeboard.ModelNoticeBoard;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -32,6 +32,8 @@ public class View extends javax.swing.JFrame {
     Date date_;
     
     home Home = new home();
+    
+    task event = new task();
     
     public View() 
     {
@@ -92,6 +94,8 @@ public class View extends javax.swing.JFrame {
            preparedStatement.executeUpdate();
            
            Home.notifications("Event Mark As Done, Item Will Remove From System",1);
+           
+           event.initData();
         }
         catch(SQLException ERROR)
         {
@@ -117,6 +121,8 @@ public class View extends javax.swing.JFrame {
            preparedStatement.executeUpdate();
            
            Home.notifications("Event Rescheduled take a look",1);
+           
+           event.initData();
                                          
         }
         catch(SQLException ERROR)
@@ -172,7 +178,7 @@ public class View extends javax.swing.JFrame {
         roundPanel8 = new com.deshan.swing.RoundPanel();
         textField3 = new textfield.TextField();
         roundPanel9 = new com.deshan.swing.RoundPanel();
-        noticeBoard = new com.raven.swing.noticeboard.NoticeBoard();
+        noticeBoard = new com.deshan.swing.noticeboard.NoticeBoard();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -465,7 +471,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
-    private com.raven.swing.noticeboard.NoticeBoard noticeBoard;
+    private com.deshan.swing.noticeboard.NoticeBoard noticeBoard;
     private com.deshan.swing.RoundPanel roundPanel5;
     private com.deshan.swing.RoundPanel roundPanel6;
     private com.deshan.swing.RoundPanel roundPanel7;

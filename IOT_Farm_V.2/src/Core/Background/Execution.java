@@ -9,25 +9,37 @@ import java.io.*;
 
 public class Execution 
 {
-    public static void main(String[] args) throws Exception {
-
-        ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "python open_weather.py");
-        
-        builder.redirectErrorStream(true);
-
-        Process p = builder.start();
-
-        BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
-
-        String line;
-
-        while (true) 
+    public static void get_Globle_weather()
+    {
+        try
         {
-            line = r.readLine();
+            ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "python open_weather.py");
         
-            if (line == null) { break; }
+            builder.redirectErrorStream(true);
+
+            Process p = builder.start();
+
+            BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+            String line;
+            
+            while (true)
+            {
+                line = r.readLine();
+                
+                if (line == null)
+                { 
+                    break; 
+                }
             
             System.out.println(line);
+            }
         }
+        catch(Exception error)
+        {
+            Core.Background.Bugs_Log.exceptions(String.valueOf(error));
+        }
+
+
     }
 }

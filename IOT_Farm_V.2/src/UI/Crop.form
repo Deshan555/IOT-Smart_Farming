@@ -213,7 +213,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/icons/high_priority_25px.png"/>
+                  <Image iconType="3" name="/img/icons/corn_25px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sprinkler System Offline"/>
               </Properties>
@@ -411,7 +411,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/icons/high_priority_25px.png"/>
+                  <Image iconType="3" name="/img/icons/corn_25px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sprinkler System Offline"/>
               </Properties>
@@ -434,7 +434,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/icons/ok_25px.png"/>
+                  <Image iconType="3" name="/img/icons/minus_28px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tempureature Status Normal"/>
               </Properties>
@@ -609,7 +609,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/icons/high_priority_25px.png"/>
+                  <Image iconType="3" name="/img/icons/corn_25px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sprinkler System Offline"/>
               </Properties>

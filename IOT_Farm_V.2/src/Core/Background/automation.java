@@ -7,7 +7,8 @@ import Core.MySql.Load_BoxB;
 
 import static Core.SQL_Lite3.Load_Crops.load_condition;
 
-import Core.SQL_Lite3.Switch_Status;
+import Core.SQL_Lite3.Load_Settings;
+
 
 import java.sql.SQLException;
 
@@ -17,6 +18,11 @@ import java.util.Timer;
 
 public class automation 
 {
+    static String link_1 = Load_Settings.load_table("LINK1");
+            
+    static String link_2 = Load_Settings.load_table("LINK2");
+            
+    static  String link_3 = Load_Settings.load_table("LINK3");
     
     
     public void condition_check(String crop)
@@ -42,7 +48,7 @@ public class automation
         int min_soil = Integer.valueOf(load_condition(crop, "min_soil"));
         
         int max_soil = Integer.valueOf(load_condition(crop, "max_soil"));
-        
+                
         try
         {
             double current_temp = Double.parseDouble(box_a.load_condition("Temperature"));
@@ -54,33 +60,33 @@ public class automation
                         
             if((current_temp > min_temp) && (current_temp < max_temp))
             {
-                request_1.switch_1_turnOff();
+                http_Get.send_Request(link_1+"/off");
             }
             else
             {
-                request_1.switch_1_turnOn();
+                http_Get.send_Request(link_1+"/on");
             }
             
             
             
             if((current_humidity > min_humidity) && (current_humidity < max_humidity))
             {
-                request_2.switch_2_turnOff();
+                http_Get.send_Request(link_2+"/off");
             }
             else
             {
-                request_2.switch_2_turnOn();
+                http_Get.send_Request(link_2+"/on");
             }
             
             
             
             if((soil_mois > min_soil) && (soil_mois < max_soil))
             {
-                request_3.switch_3_turnOff();
+                http_Get.send_Request(link_3+"/off");
             }
             else
             {
-                request_3.switch_3_turnOn();
+                http_Get.send_Request(link_3+"/on");
             }
         }
         catch(SQLException error)
@@ -89,12 +95,7 @@ public class automation
         }
         
     }
-    
-    public static void task_1()
-    {
-        
-    }
-    
+       
     public static void tasker()
     {
         Timer t = new Timer();
@@ -105,21 +106,19 @@ public class automation
         
             public void run() 
             {
-                automation automatic = new automation();
-        
-                automatic.condition_check("Tomato");
+                try
+                {
+                    automation automatic = new automation();
+                    
+                    automatic.condition_check(Cache_Reader.data("Crop.dat"));
+                }
+                catch(Exception error)
+                {
+                    Core.Background.Bugs_Log.exceptions(String.valueOf(error));
+                }
                 
             }
         }, 0, 15000);
     }
-    
-    public static void main(String[] args)
-    {
-        automation automatic = new automation();
         
-                //automatic.condition_check("Tomato");
-                
-        tasker();
-    }
-    
 }

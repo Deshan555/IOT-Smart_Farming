@@ -10,6 +10,8 @@ import Core.SQL_Lite3.Load_Settings;
 import Core.SQL_Lite3.Save_SQL;
 import Core.SQL_Lite3.Save_Settings;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -61,6 +63,8 @@ public class Settings extends javax.swing.JInternalFrame {
         try
         {
             comboBoxSuggestion1.setSelectedItem(Core.Background.Cache_Reader.data("City.dat"));
+            
+            comboBoxSuggestion2.setSelectedItem(Core.Background.Cache_Reader.data("Crop.dat"));
         }
         catch(Exception error)
         {
@@ -80,6 +84,8 @@ public class Settings extends javax.swing.JInternalFrame {
         try 
         {
             Cache_Writer.add_data(comboBoxSuggestion1.getSelectedItem().toString(), "City.dat");
+            
+            Cache_Writer.add_data(comboBoxSuggestion2.getSelectedItem().toString(), "Crop.dat");
         }
         catch(IOException ex) 
         {
@@ -96,6 +102,39 @@ public class Settings extends javax.swing.JInternalFrame {
         }
     }
     
+    public static Connection connection()
+    {
+        Connection conn = null;
+        
+        home Home = new home();
+        
+        String host = Load_Settings.load_data("HOST");
+        
+        String port = Load_Settings.load_data("PORT");
+        
+        String user_name = Load_Settings.load_data("UNAME");
+        
+        String password = Load_Settings.load_data("PASSWORD");
+        
+        String db_name = Load_Settings.load_data("DBNAME");
+
+        String database_url = "jdbc:mysql://"+host+":"+port+"/"+db_name+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
+        try
+        {
+           conn = DriverManager.getConnection(database_url, user_name, password);
+           
+           Home.notifications("Connection Established ..",1);
+            
+        }
+        catch (Exception ERROR)
+        {
+            System.out.println("Error Message : "+ERROR);
+            
+            Home.notifications("ERROR : "+String.valueOf(ERROR),2);
+        }
+        return conn;
+    }
 
     
     
@@ -137,11 +176,14 @@ public class Settings extends javax.swing.JInternalFrame {
         roundPanel6 = new com.deshan.swing.RoundPanel();
         jLabel9 = new javax.swing.JLabel();
         comboBoxSuggestion1 = new combo_suggestion.ComboBoxSuggestion();
-        roundPanel7 = new com.deshan.swing.RoundPanel();
-        jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        roundPanel12 = new com.deshan.swing.RoundPanel();
+        jLabel29 = new javax.swing.JLabel();
+        comboBoxSuggestion2 = new combo_suggestion.ComboBoxSuggestion();
+        jLabel30 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         roundPanel14 = new com.deshan.swing.RoundPanel();
         roundPanel8 = new com.deshan.swing.RoundPanel();
@@ -382,7 +424,7 @@ public class Settings extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addComponent(comboBoxSuggestion1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
                 .addContainerGap())
         );
         roundPanel6Layout.setVerticalGroup(
@@ -395,33 +437,6 @@ public class Settings extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        roundPanel7.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/save_close_24px.png"))); // NOI18N
-        jLabel10.setText("SAVE CHANGES");
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout roundPanel7Layout = new javax.swing.GroupLayout(roundPanel7);
-        roundPanel7.setLayout(roundPanel7Layout);
-        roundPanel7Layout.setHorizontalGroup(
-            roundPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        roundPanel7Layout.setVerticalGroup(
-            roundPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -431,6 +446,59 @@ public class Settings extends javax.swing.JInternalFrame {
         jLabel25.setForeground(new java.awt.Color(102, 102, 102));
         jLabel25.setText("CYBER SWITCH LINKS");
 
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/save_30px.png"))); // NOI18N
+        jLabel10.setText("SAVE CHANGES");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+
+        roundPanel12.setBackground(new java.awt.Color(242, 242, 242));
+
+        jLabel29.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel29.setText("SELECT CROP :");
+
+        comboBoxSuggestion2.setBackground(new java.awt.Color(242, 242, 242));
+        comboBoxSuggestion2.setBorder(null);
+        comboBoxSuggestion2.setForeground(new java.awt.Color(204, 204, 204));
+        comboBoxSuggestion2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cucumber", "Strawberry", "Lettuce", "Tomato", " ", " " }));
+        comboBoxSuggestion2.setFont(new java.awt.Font("Yu Gothic UI", 0, 16)); // NOI18N
+        comboBoxSuggestion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxSuggestion2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout roundPanel12Layout = new javax.swing.GroupLayout(roundPanel12);
+        roundPanel12.setLayout(roundPanel12Layout);
+        roundPanel12Layout.setHorizontalGroup(
+            roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(roundPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(comboBoxSuggestion2, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        roundPanel12Layout.setVerticalGroup(
+            roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(roundPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxSuggestion2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jLabel30.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel30.setText("TARGET CROP");
+
         javax.swing.GroupLayout roundPanel13Layout = new javax.swing.GroupLayout(roundPanel13);
         roundPanel13.setLayout(roundPanel13Layout);
         roundPanel13Layout.setHorizontalGroup(
@@ -438,27 +506,40 @@ public class Settings extends javax.swing.JInternalFrame {
             .addGroup(roundPanel13Layout.createSequentialGroup()
                 .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(roundPanel13Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
                         .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(roundPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(roundPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(roundPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(roundPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(roundPanel13Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(roundPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(roundPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(roundPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(roundPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(roundPanel13Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(roundPanel13Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24)
+                        .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundPanel13Layout.createSequentialGroup()
+                                .addGap(0, 1, Short.MAX_VALUE)
+                                .addComponent(roundPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(roundPanel13Layout.createSequentialGroup()
+                                .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         roundPanel13Layout.setVerticalGroup(
             roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundPanel13Layout.createSequentialGroup()
-                .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, roundPanel13Layout.createSequentialGroup()
+                .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(roundPanel13Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17)
@@ -469,20 +550,23 @@ public class Settings extends javax.swing.JInternalFrame {
                         .addComponent(roundPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(roundPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(roundPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(roundPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(roundPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(roundPanel13Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(roundPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1)
                             .addGroup(roundPanel13Layout.createSequentialGroup()
-                                .addGap(0, 27, Short.MAX_VALUE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
 
@@ -493,14 +577,14 @@ public class Settings extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(roundPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(roundPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(roundPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         tab.addTab("GENERAL", jPanel1);
@@ -732,6 +816,11 @@ public class Settings extends javax.swing.JInternalFrame {
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/wired_network_connection_30px.png"))); // NOI18N
         jLabel24.setText("TEST CONNECTIONS");
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout roundPanel17Layout = new javax.swing.GroupLayout(roundPanel17);
         roundPanel17.setLayout(roundPanel17Layout);
@@ -757,7 +846,7 @@ public class Settings extends javax.swing.JInternalFrame {
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(roundPanel14Layout.createSequentialGroup()
                         .addComponent(roundPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220)
+                        .addGap(217, 217, 217)
                         .addComponent(roundPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(roundPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(roundPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -765,7 +854,7 @@ public class Settings extends javax.swing.JInternalFrame {
                         .addComponent(roundPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(roundPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(roundPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         roundPanel14Layout.setVerticalGroup(
             roundPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -910,11 +999,21 @@ public class Settings extends javax.swing.JInternalFrame {
         save_settings();
     }//GEN-LAST:event_jLabel20MouseClicked
 
+    private void comboBoxSuggestion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxSuggestion2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxSuggestion2ActionPerformed
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+        
+        connection();
+    }//GEN-LAST:event_jLabel24MouseClicked
+
     
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private combo_suggestion.ComboBoxSuggestion comboBoxSuggestion1;
+    private combo_suggestion.ComboBoxSuggestion comboBoxSuggestion2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -937,7 +1036,9 @@ public class Settings extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -962,6 +1063,7 @@ public class Settings extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField9;
     private com.deshan.swing.RoundPanel roundPanel10;
     private com.deshan.swing.RoundPanel roundPanel11;
+    private com.deshan.swing.RoundPanel roundPanel12;
     private com.deshan.swing.RoundPanel roundPanel13;
     private com.deshan.swing.RoundPanel roundPanel14;
     private com.deshan.swing.RoundPanel roundPanel15;
@@ -972,7 +1074,6 @@ public class Settings extends javax.swing.JInternalFrame {
     private com.deshan.swing.RoundPanel roundPanel4;
     private com.deshan.swing.RoundPanel roundPanel5;
     private com.deshan.swing.RoundPanel roundPanel6;
-    private com.deshan.swing.RoundPanel roundPanel7;
     private com.deshan.swing.RoundPanel roundPanel8;
     private com.deshan.swing.RoundPanel roundPanel9;
     private tabbed.MaterialTabbed tab;

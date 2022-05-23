@@ -6,7 +6,7 @@
 package UI;
 
 import Core.Background.Set_Digital;
-import com.raven.swing.noticeboard.ModelNoticeBoard;
+import com.deshan.swing.noticeboard.ModelNoticeBoard;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 

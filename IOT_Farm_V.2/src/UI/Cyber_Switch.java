@@ -6,11 +6,8 @@
 package UI;
 
 import Core.Background.CyberSwitch;
-import Core.Background.Network_Check;
-import Core.Background.cyber_switch;
 import Core.Background.get_localDate;
-import Core.SQL_Lite3.Switch_Status;
-import java.awt.Color;
+import Core.SQL_Lite3.Load_Settings;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import swing.EventSwitchSelected;
 
@@ -20,9 +17,12 @@ import swing.EventSwitchSelected;
  */
 public class Cyber_Switch extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Welcome
-     */
+    static String link_1 = Load_Settings.load_table("LINK1");
+            
+    static String link_2 = Load_Settings.load_table("LINK2");
+            
+    static  String link_3 = Load_Settings.load_table("LINK3");
+    
     public Cyber_Switch() 
     {
         initComponents();
@@ -33,7 +33,7 @@ public class Cyber_Switch extends javax.swing.JInternalFrame {
         
         bis.setNorthPane(null);
         
-        switch_selecting();
+        //switch_selecting();
                 
         cmd.append("ICEBURG Cyber Switch Console V.01\n");
         
@@ -41,98 +41,83 @@ public class Cyber_Switch extends javax.swing.JInternalFrame {
         
         switchButton2.addEventSelected(new EventSwitchSelected()
         {
+            CyberSwitch switch_cyber = new CyberSwitch();
+            
             @Override
             public void onSelected(boolean selected) 
             {
                 if (selected) 
                 {
-                   CyberSwitch open = new CyberSwitch();
-                   
-                   open.link_install("http://192.168.1.100/1/on");
-                   
-                   open.start();
+                    switch_cyber.link_install(link_1+"/on");
+                    
+                    switch_cyber.run();
+                    //http_Get.send_Request(link_1+"/on");
                 } 
                 else 
                 {
-                    CyberSwitch open = new CyberSwitch();
+                    //http_Get.send_Request(link_1+"/off");
                     
-                    open.link_install("http://192.168.1.100/1/off");
+                    switch_cyber.link_install(link_1+"/off");
                     
-                    open.start();
+                    switch_cyber.run();
                 }
             }
         });
         
         switchButton3.addEventSelected(new EventSwitchSelected()
         {
+            CyberSwitch switch_cyber = new CyberSwitch();
+            
             @Override
             public void onSelected(boolean selected) 
             {
                 if (selected) 
                 {
-                   CyberSwitch open = new CyberSwitch();
-                   
-                   open.link_install("http://192.168.1.100/1/on");
-                   
-                   open.start();
+                    //http_Get.send_Request(link_2+"/on");
+                    
+                    switch_cyber.link_install(link_2+"/on");
+                    
+                    switch_cyber.run();
                 } 
                 else 
                 {
-                    CyberSwitch open = new CyberSwitch();
+                    //http_Get.send_Request(link_2+"/off");
                     
-                    open.link_install("http://192.168.1.100/1/off");
+                    switch_cyber.link_install(link_2+"/off");
                     
-                    open.start();
+                    switch_cyber.run();
                 }
             }
         });
         
         switchButton4.addEventSelected(new EventSwitchSelected()
         {
+            CyberSwitch switch_cyber = new CyberSwitch();
+            
             @Override
             public void onSelected(boolean selected) 
             {
                 if (selected) 
                 {
-                   CyberSwitch open = new CyberSwitch();
-                   
-                   open.link_install("http://192.168.1.100/1/on");
-                   
-                   open.start();
+                    //http_Get.send_Request(link_3+"/on");
+                    
+                    switch_cyber.link_install(link_3+"/on");
+                    
+                    switch_cyber.run();
                 } 
                 else 
                 {
-                    CyberSwitch open = new CyberSwitch();
+                    //http_Get.send_Request(link_3+"/off");
                     
-                    open.link_install("http://192.168.1.100/1/off");
+                    switch_cyber.link_install(link_3+"/off");
                     
-                    open.start();
+                    switch_cyber.run();
                 }
             }
         });
     }
     
-    public void switch_selecting()
-    {
-        String switch_1 = Switch_Status.load_Switch("1");
-        
-        String switch_2 = Switch_Status.load_Switch("2");
-        
-        String switch_3 = Switch_Status.load_Switch("3");
-        
-        if(switch_1.equals("A"))
-        {
-            switchButton2.setSelected(true);
-        }
-        if(switch_2.equals("A"))
-        {
-            switchButton3.setSelected(true);
-        }
-        if(switch_3.equals("A"))
-        {
-            switchButton4.setSelected(true);
-        }
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
