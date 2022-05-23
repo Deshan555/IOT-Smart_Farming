@@ -10,6 +10,8 @@ from datetime import date
 
 import mysql.connector
 
+import Config
+
 
 # function for get current date
 
@@ -31,7 +33,7 @@ def now_time():
 
 def sql_sync(data_1: str, data_2: str, data_3: str, date_4: str):
 
-    connect = mysql.connector.connect(host="localhost", user="root", passwd="", database="data_store")
+    connect = mysql.connector.connect(host=Config.HOST_NAME, user=Config.USER_NAME, passwd=Config.PASSWORD, database=Config.DATABASE_NAME)
 
     my_cursor = connect.cursor()
 
@@ -50,7 +52,7 @@ def sql_sync(data_1: str, data_2: str, data_3: str, date_4: str):
 
 # make sure the 'COM#' is set according the Windows Device Manager
 
-ser = serial.Serial('COM9', 9600, timeout=1)
+ser = serial.Serial(Config.SENSOR_BOX_1, 9600, timeout=1)
 
 time.sleep(2)
 

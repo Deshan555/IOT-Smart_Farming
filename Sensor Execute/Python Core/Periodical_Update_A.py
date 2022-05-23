@@ -8,6 +8,8 @@ import mysql.connector
 
 import random
 
+import Config
+
 from threading import Timer
 
 
@@ -52,7 +54,7 @@ def data_sync():
 
     print(text)
 
-    connect = mysql.connector.connect(host="localhost", user="root", passwd="", database="data_store")
+    connect = mysql.connector.connect(host=Config.HOST_NAME, user=Config.USER_NAME, passwd=Config.PASSWORD, database=Config.DATABASE_NAME)
 
     my_cursor = connect.cursor()
 
