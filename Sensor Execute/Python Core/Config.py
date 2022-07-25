@@ -13,6 +13,6 @@ PASSWORD: str = "data_store"
 
 # COM Port details
 
-SENSOR_BOX_1: str = "COM9"
+SENSOR_BOX_1: str = "COM5"
 
 SENSOR_BOX_2: str = "COM7"

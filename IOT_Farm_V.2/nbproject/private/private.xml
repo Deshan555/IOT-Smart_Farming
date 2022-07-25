@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/UI/home.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/UI/Splash_Screen.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/Core/Background/boot_Up.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/UI/History.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/Core/Background/py_executer.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/UI/Conditions.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/Core/Background/Cache_Reader.java</file>
-            <file>file:/D:/My%20Projects/Java/IOT_Farm_V.2/src/UI/Crop.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
