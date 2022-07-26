@@ -17,3 +17,60 @@ Predictive analytics for smart farming Crop predication plays a key role, it hel
 Farmers have started to realize that the IoT is a driving force for increasing agricultural production in a cost-effective way.
 
 Because the market is still developing, there is still ample opportunity for businesses willing to join in
+
+
+## Sensor Box 01 Details
+
+Sensor Box one includes two sensors 
+
+* DHT11 OR DHT22
+* MQ135 Gas Sensor
+
+we collecting sevaral data using above two sensors
+
+* Temparature
+* Humidity
+* Heat Index (also known  as feel like)
+* Gas Level(P.P.M - Parts Per Million)
+ 
+### DHT11 Humidity and Temperature Sensor Overview
+
+#### DHT11 Sensor
+
+The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air and spits out a digital signal on the data pin (no analog input pins needed). Its fairly simple to use, but requires careful timing to grab data. The only real downside of this sensor is you can only get new data from it once every 2 seconds, the sensor readings can be up to 2 seconds old.
+
+```Compared to the DHT22, this sensor is less precise, less accurate, and works in a smaller range of temperature/humidity, but it is smaller and less expensive.```
+
+Technical Details
+
+* Low cost
+* 3V to 5V power and I/O
+* 2.5mA max current use during conversion (while requesting data)
+* Good for 20-80% humidity readings with 5% accuracy
+* Good for 0-50°C temperature readings ±2°C accuracy
+* No more than 1 Hz sampling rate (once every second)
+* Body size 15.5mm x 12mm x 5.5mm
+* 4 pins with 0.1" spacing
+
+#### MQ-135 Gas Sensor
+
+The MQ-135 Gas sensor can detect gases like Ammonia (NH3), sulfur (S), Benzene (C6H6), CO2, and other harmful gases and smoke. Similar to other MQ series gas sensor, this sensor also has a digital and analog output pin. When the level of these gases go beyond a threshold limit in the air the digital pin goes high. This threshold value can be set by using the on-board potentiometer. The analog output pin, outputs an analog voltage which can be used to approximate the level of these gases in the atmosphere.
+
+The MQ135 air quality sensor module operates at 5V and consumes around 150mA. It requires some pre-heating before it could actually give accurate results.
+
+
+Details of MQ135 Sensor
+
+The MQ135 is one of the popular gas sensors from the MQ series of sensors that are commonly used in air quality control equipment. It operates from 2.5V to 5.0V and can provide both digital and analog output. The pinouts and important components on an MQ135 Module is marked below
+
+```Note that all MQ sensors have to be powered up for a pre-heat duration for the sensor to warm up before it can start working. This pre-heat time is normally between 30 seconds to a couple of minutes. When you power up the module the power LED will turn on, leave the module in this state till the pre-heat duration is completed.```
+
+
+Technical Specifications of MQ135 Gas Sensor
+
+* Operating Voltage: 2.5V to 5.0V
+* Power consumption: 150mA
+* Detect/Measure: NH3, Nox, CO2, Alcohol, Benzene, Smoke
+* Typical operating Voltage: 5V
+* Digital Output: 0V to 5V (TTL Logic ) @ 5V Vcc
+* Analog Output: 0-5V @ 5V Vcc
