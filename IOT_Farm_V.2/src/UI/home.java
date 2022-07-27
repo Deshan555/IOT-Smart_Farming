@@ -6,9 +6,9 @@
 package UI;
 
 import Core.Background.automation;
-import Core.Background.boot_Up;
 import Core.Background.py_executer;
 import com.deshan.notifications.Notification;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -34,6 +34,8 @@ public class home extends javax.swing.JFrame {
         py_executer execute_python = new py_executer();
         
         execute_python.start();
+        
+        setIconImage(new ImageIcon(getClass().getResource("/img/icons/iceberg_48px.png")).getImage());
     }
 
     /**
@@ -63,6 +65,7 @@ public class home extends javax.swing.JFrame {
         pane = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Smart Agriculture System");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
