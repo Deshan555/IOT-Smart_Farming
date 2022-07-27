@@ -8,22 +8,9 @@ package UI;
 import Core.Background.Gas_Chart;
 import Core.Background.HeatIndex_Chart;
 import Core.Background.Humidity_Bar;
-import static Core.Background.Humidity_Bar.get_Humidity;
 import Core.Background.Soil_Chart;
 import Core.Background.Temp_Chart;
 import Core.Background.Water_Level;
-import com.deshan.chart.ModelChartLine;
-import com.deshan.notifications.Notification;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimerTask;
-import javax.swing.Timer;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**

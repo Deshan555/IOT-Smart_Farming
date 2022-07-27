@@ -7,6 +7,7 @@ package UI;
 
 import Core.Background.Bugs_Log;
 import Core.Background.get_localDate;
+import Core.Background.water_lvReformat;
 import Core.MySql.Connector;
 import static Core.MySql.data_count.count;
 import static UI.NewJFrame.list;
@@ -24,10 +25,8 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.statistics.HistogramDataset;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import org.jfree.chart.renderer.category.BarRenderer;
@@ -40,8 +39,6 @@ public class Conditions extends javax.swing.JInternalFrame {
 
  
     public static String date = get_localDate.LocalDate();
-    
-    //public static String date = "2022-05-10";
     
     public Conditions() 
     {
@@ -1088,7 +1085,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             
             while(rs.next())
             {
-                Integer data = Integer.valueOf(rs.getString("MAX(Water_Level)"));
+                Integer data = water_lvReformat.data_fix(rs.getString("MAX(Water_Level)"));
                 
                 jLabel28.setText("MAX WATER LEVEL : "+data+"%");
                 
@@ -1127,7 +1124,7 @@ public class Conditions extends javax.swing.JInternalFrame {
             
             while(rs.next())
             {
-                Integer data = Integer.valueOf(rs.getString("MIN(Water_Level)"));
+                Integer data = water_lvReformat.data_fix(rs.getString("MIN(Water_Level)"));
                 
                 jLabel30.setText("MIN WATER LEVEL : "+data+"%");
                 
@@ -1176,13 +1173,13 @@ public class Conditions extends javax.swing.JInternalFrame {
             {
                 if(x >= extract)
                 {
-                String value = rs.getString("water_level");
+                int value = water_lvReformat.data_fix(rs.getString("water_level"));
                 
                 String date =  rs.getString("record_date");
                 
                 String time =  rs.getString("record_time");
                 
-                dataset.setValue(Double.parseDouble(value), "water_level(%)", date+" : "+time);
+                dataset.setValue(Double.valueOf(value), "water_level(%)", date+" : "+time);
                 }
                 
                 x++;
@@ -1246,13 +1243,13 @@ public class Conditions extends javax.swing.JInternalFrame {
             {
                 if(x >= extract)
                 {
-                   String value = rs.getString("water_level");
+                   int value = water_lvReformat.data_fix(rs.getString("water_level"));
                 
                    String date =  rs.getString("record_date");
                 
                    String time =  rs.getString("record_time");
                 
-                   dataset.setValue(Double.parseDouble(value), "water_level(%)", date+" : "+time);
+                   dataset.setValue(Double.valueOf(value), "water_level(%)", date+" : "+time);
                 }
                 
                 x++;

@@ -1,0 +1,65 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 379 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 331219 0 0
+ciMethod java/lang/Object notifyAll ()V 2073 1 259 0 -1
+ciMethod java/lang/Object wait ()V 57 1 16 0 -1
+ciMethod java/security/AccessControlContext getDebug ()Lsun/security/util/Debug; 0 0 1 0 -1
+ciMethod java/security/AccessControlContext <init> ([Ljava/security/ProtectionDomain;Z)V 73 1 12 0 0
+ciMethod java/security/AccessControlContext optimize ()Ljava/security/AccessControlContext; 2081 1 5406 0 3328
+ciMethod java/security/AccessControlContext combine ([Ljava/security/ProtectionDomain;[Ljava/security/ProtectionDomain;)[Ljava/security/ProtectionDomain; 1009 1 2845 0 -1
+ciMethod java/security/AccessControlContext calculateFields (Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;[Ljava/security/Permission;)V 841 1 2164 0 -1
+ciMethod java/lang/Thread currentThread ()Ljava/lang/Thread; 2049 1 256 0 -1
+ciMethod java/lang/Thread interrupt ()V 0 0 1 0 0
+ciMethod java/lang/Thread checkAccess ()V 529 1 66 0 -1
+ciMethod java/lang/Thread holdsLock (Ljava/lang/Object;)Z 3073 1 384 0 -1
+ciMethod java/lang/Thread interrupt0 ()V 0 0 1 0 -1
+ciMethod java/util/Map isEmpty ()Z 0 0 1 0 -1
+ciMethod java/util/Map get (Ljava/lang/Object;)Ljava/lang/Object; 0 0 1 0 -1
+ciMethod sun/misc/Unsafe compareAndSwapObject (Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z 3073 1 384 0 -1
+ciMethod sun/misc/Unsafe compareAndSwapInt (Ljava/lang/Object;JII)Z 3073 1 384 0 -1
+ciMethod sun/misc/Unsafe unpark (Ljava/lang/Object;)V 2057 1 257 0 -1
+ciMethod java/security/AccessController doPrivileged (Ljava/security/PrivilegedAction;)Ljava/lang/Object; 2049 1 256 0 -1
+ciMethod java/security/AccessController getStackAccessControlContext ()Ljava/security/AccessControlContext; 2049 1 256 0 -1
+ciMethod java/security/AccessController getInheritedAccessControlContext ()Ljava/security/AccessControlContext; 2065 1 258 0 -1
+ciMethod java/security/AccessController getContext ()Ljava/security/AccessControlContext; 2065 1 17141 0 192
+ciMethod java/util/List size ()I 0 0 1 0 -1
+ciMethod java/util/List isEmpty ()Z 0 0 1 0 -1
+ciMethod java/util/List get (I)Ljava/lang/Object; 0 0 1 0 -1
+ciMethod java/util/ArrayList size ()I 1105 1 138 0 0
+ciMethod java/util/ArrayList isEmpty ()Z 2049 1 5377 0 64
+ciMethod java/util/Set isEmpty ()Z 0 0 1 0 -1
+ciMethod java/util/Set add (Ljava/lang/Object;)Z 0 0 1 0 -1
+ciMethod java/util/HashMap hash (Ljava/lang/Object;)I 2049 1 23311 0 -1
+ciMethod java/util/HashMap put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 2225 1 5447 0 2720
+ciMethod java/util/HashMap putVal (ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; 2177 169 5925 0 -1
+ciMethod java/lang/ThreadLocal get ()Ljava/lang/Object; 569 1 608 0 -1
+ciMethod java/util/concurrent/atomic/AtomicInteger get ()I 1817 1 227 0 0
+ciMethodData java/lang/Object <init> ()V 2 331219 orig 264 72 34 126 100 0 0 0 0 128 4 55 23 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 153 94 40 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 3 0 1 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethod sun/security/util/Debug println (Ljava/lang/String;)V 0 0 1 0 -1
+ciMethod java/util/concurrent/locks/Lock lock ()V 0 0 1 0 -1
+ciMethod java/util/concurrent/locks/Lock unlock ()V 0 0 1 0 -1
+ciMethod java/util/concurrent/locks/ReentrantLock lock ()V 2057 1 120950 0 288
+ciMethod java/util/concurrent/locks/ReentrantLock unlock ()V 3097 1 225615 0 192
+ciMethod java/util/HashSet add (Ljava/lang/Object;)Z 2049 1 5376 0 128
+ciMethod java/awt/Container countComponents ()I 2609 1 18774 0 0
+ciMethod java/awt/Container getListenersCount (IZ)I 2081 1 5385 0 160
+ciMethod java/awt/Container createChildHierarchyEvents (IJZ)V 2049 1 3167 0 0
+ciMethod java/awt/Component getTreeLock ()Ljava/lang/Object; 2065 1 151631 0 0
+ciMethod java/awt/Component checkTreeLock ()V 3121 1 59370 0 0
+ciMethod java/awt/Component notifyNewBounds (ZZ)V 2393 1 5420 0 -1
+ciMethod java/awt/Component createHierarchyEvents (ILjava/awt/Component;Ljava/awt/Container;JZ)I 3073 1 5532 0 -1
+ciMethod java/awt/Component isCoalescingEnabled ()Z 969 1 121 0 0
+ciMethod java/awt/Toolkit loadAssistiveTechnologies ()V 9 1 1 0 -1
+ciMethod java/awt/Toolkit getDefaultToolkit ()Ljava/awt/Toolkit; 2049 1 12920 0 544
+ciMethod java/awt/Toolkit getSystemEventQueueImpl ()Ljava/awt/EventQueue; 0 0 1 0 -1
+ciMethod java/awt/Toolkit getEventQueue ()Ljava/awt/EventQueue; 2049 1 6493 0 0
+ciMethod java/awt/Toolkit enabledOnToolkit (J)Z 2049 1 22004 0 96
+ciMethod java/awt/event/ComponentEvent <init> (Ljava/awt/Component;I)V 1809 1 1831 0 0
+ciMethod java/awt/AWTEvent <init> (Ljava/lang/Object;I)V 2049 1 5376 0 352
+ciMethod java/awt/AWTEvent getID ()I 1033 1 129 0 0
+ciMethod java/util/EventObject <init> (Ljava/lang/Object;)V 2201 1 9133 0 0
+ciMethod java/util/EventObject getSource ()Ljava/lang/Object; 1081 1 135 0 0
+ciMethod java/awt/peer/ComponentPeer coalescePaintEvent (Ljava/awt/event/PaintEvent;)V 0 0 1 0 -1
+ciMethodData java/util/HashMap put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; 2 5447 orig 264 72 34 126 100 0 0 0 0 96 109 69 23 0 0 0 0 152 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 22 1 0 0 137 161 0 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 7 0 2 0 0 0 64 0 0 0 255 255 255 255 2 0 2 0 0 0 0 0 data 8 0x20002 0x1431 0x90005 0x1e 0x20644420 0x1309 0x20bffdd0 0x10a oops 2

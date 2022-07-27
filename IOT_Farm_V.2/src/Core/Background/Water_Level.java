@@ -39,9 +39,12 @@ public class Water_Level
         Load_BoxB box_b = new Load_BoxB();
         
         Integer data = 0;
+        
         try
         {
             data = Integer.valueOf(box_b.load_condition("Water_Level"));
+            
+            data  = water_lvReformat.data_fix(String.valueOf(data));
         }
         catch(Exception ERROR)
         {

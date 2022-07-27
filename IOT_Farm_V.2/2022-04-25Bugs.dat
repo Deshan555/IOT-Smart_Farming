@@ -1,0 +1,14 @@
+2022-04-25[ com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'mobile_number' at row 1 ]
+
+2022-04-25[ com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'mobile_number' at row 1 ]
+
+2022-04-25[ com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'mobile_number' at row 1 ]
+
+2022-04-25[ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ID (SMART CARD),'EMPLOYER NAME','NIC NUMBER','MOBILE NUMBER','PERMANENT EMPLOYEE' at line 1 ]
+
+2022-04-25[ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''','','','PERMANENT EMPLOYEE','MALE','GREEN HOUSE','false','false','false','fals' at line 1 ]
+
+2022-04-25[ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '2944799' for key 'PRIMARY' ]
+
+2022-04-25[ java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employee' at line 1 ]
+

@@ -6,8 +6,6 @@
 package UI;
 
 import Core.Background.Set_Digital;
-import com.deshan.swing.noticeboard.ModelNoticeBoard;
-import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -29,11 +27,7 @@ public class Sensor_Box extends javax.swing.JInternalFrame {
         
         bis.setNorthPane(null);
         
-        Set_Digital.tasker();
-        
-        
-        //initNoticeBoard();
-        
+        Set_Digital.tasker();        
     }
     
 
