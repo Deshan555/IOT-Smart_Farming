@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UI;
 
 import java.awt.Toolkit;
 
 import java.awt.event.WindowEvent;
-
-import java.io.IOException;
 import javax.swing.ImageIcon;
+
 
 public class Splash_Screen extends javax.swing.JFrame {
 
@@ -21,7 +15,7 @@ public class Splash_Screen extends javax.swing.JFrame {
     {
         initComponents();
             
-        //setIconImage(new ImageIcon(getClass().getResource("/Images/rocket_100px.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/img/icons/iceberg_48px.png")).getImage());
     }
         
     public void close()
@@ -65,9 +59,9 @@ public class Splash_Screen extends javax.swing.JFrame {
         bar.setBorderPainted(false);
         bar.setFocusable(false);
         bar.setOpaque(true);
-        getContentPane().add(bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 700, 1390, 10));
+        getContentPane().add(bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 700, 1400, 10));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pexels-zaksheuskaya-1568607.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/69.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 780));
 
         pack();
