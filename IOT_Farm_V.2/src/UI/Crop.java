@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UI;
 
 import Core.Background.Cache_Reader;
@@ -10,6 +5,7 @@ import Core.MySql.Load_BoxA;
 import Core.MySql.Load_BoxB;
 import static Core.SQL_Lite3.Load_Crops.load_condition;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -31,9 +27,20 @@ public class Crop extends javax.swing.JInternalFrame {
         
         bis.setNorthPane(null);
         
-        data_load("Tomato");
+        // pass correct data to function
         
-        condition_check("Tomato");
+        try
+        {
+            String crop = Cache_Reader.data("Crop.dat");
+            
+            data_load(crop);
+            
+            condition_check(crop);
+        }
+        catch(Exception error)
+        {
+          // error here
+        }
     }
     
     public static void data_load(String crop)
@@ -84,7 +91,9 @@ public class Crop extends javax.swing.JInternalFrame {
                     
             progressBarCustom1.setValue((int)soil_mois);
             
-            if((current_temp > min_temp) && ( current_temp < max_temp))
+            System.out.println((int)current_temp);
+            
+            if((current_temp >= min_temp) && ( current_temp <= max_temp))
             {
                 jLabel14.setText("Tempureature Status Normal");
                 
@@ -97,7 +106,7 @@ public class Crop extends javax.swing.JInternalFrame {
                 jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png")));
             }
             
-            if((current_humidity > min_humidity) && (current_humidity < max_humidity))
+            if((current_humidity >= min_humidity) && (current_humidity <= max_humidity))
             {
                 jLabel21.setText("Humidity Status Normal");
                 
@@ -110,7 +119,7 @@ public class Crop extends javax.swing.JInternalFrame {
                 jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/high_priority_25px.png")));
             }
             
-            if((soil_mois > min_soil) && (soil_mois < max_soil))
+            if((soil_mois >= min_soil) && (soil_mois <= max_soil))
             {
                 jLabel9.setText("Soil Moisture Status Normal");
                 
