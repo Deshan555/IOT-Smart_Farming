@@ -39,9 +39,4 @@ public class Decryption
 
         return null;
     }
-    
-    public static void main(String[] args)
-    {
-        System.out.println(decrypt("wZR0ga24AquZwvUsXvm/qA=="));
-    }
 }

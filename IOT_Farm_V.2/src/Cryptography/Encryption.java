@@ -1,14 +1,21 @@
 package Cryptography;
 
 import java.io.UnsupportedEncodingException;
+
 import java.security.InvalidAlgorithmParameterException;
+
 import java.security.InvalidKeyException;
+
 import java.security.NoSuchAlgorithmException;
+
 import javax.crypto.BadPaddingException;
+
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
+
 import javax.crypto.IllegalBlockSizeException;
+
 import javax.crypto.NoSuchPaddingException;
 
 import javax.crypto.spec.IvParameterSpec;
@@ -44,10 +51,5 @@ public class Encryption
             Core.Background.Bugs_Log.exceptions(String.valueOf(ex));
         }
         return null;
-    }
-    
-     public static void main(String[] args)
-    {
-        System.out.println(encrypt("SETUP"));
     }
 }
