@@ -30,7 +30,9 @@ public class Set_Digital
         
         UI.Sensor_Box.jLabel37.setText(box_a.load_condition("Humidity")+"%");
         
-        UI.Sensor_Box.jLabel34.setText(box_b.load_condition("Water_Level")+"%");
+        int get_waterLv = water_lvReformat.data_fix(box_b.load_condition("Water_Level"));
+        
+        UI.Sensor_Box.jLabel34.setText(String.valueOf(get_waterLv)+"%");
         
         UI.Sensor_Box.jLabel28.setText(box_b.load_condition("Soil_Moisture")+"%");
 
@@ -54,6 +56,8 @@ public class Set_Digital
         
         String soil_lv = box_b.load_condition("Soil_Moisture");
         
+        int get_waterLv = water_lvReformat.data_fix(box_b.load_condition("Water_Level"));
+        
         UI.Sensor_Box.jTextArea1.append("Update Time : "+time+"\n");
         
         UI.Sensor_Box.jTextArea1.append("------------------GREEN HOUSE------------------\n\n\n");
@@ -66,7 +70,7 @@ public class Set_Digital
         
         UI.Sensor_Box.jTextArea1.append("------------------HYDROPONICS------------------\n\n\n");
         
-        UI.Sensor_Box.jTextArea1.append("Water Level In Hydroponics : "+water_lv+"%\n\n");
+        UI.Sensor_Box.jTextArea1.append("Water Level In Hydroponics : "+String.valueOf(get_waterLv)+"%\n\n");
         
         UI.Sensor_Box.jTextArea1.append("-----------------SOIL MOSITURE-----------------\n\n\n");
         
