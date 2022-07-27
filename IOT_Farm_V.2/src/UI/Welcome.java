@@ -48,9 +48,9 @@ public class Welcome extends javax.swing.JInternalFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/iceberg_100px.png"))); // NOI18N
         jLabel2.setText("ICEBURG SMART FARM");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 630));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 630));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pexels-zaksheuskaya-1568607.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Main_Screen-modified.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 690));
 
         pack();
