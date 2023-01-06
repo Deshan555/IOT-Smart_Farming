@@ -50,14 +50,14 @@ Sensor box three includes one component.
 
 ### Application Screenshots
 
-https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_1.png
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_1.png)
 
-https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_2.png
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_2.png)
 
-https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_3.png
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_3.png)
 
-https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_4.png
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_4.png)
 
-https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_5.png
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_5.png)
 
-https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_6.png
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_6.png)
