@@ -26,6 +26,8 @@ We collecting several data using above two sensors
 - Heat Index (also known as feel like)
 - Gas Level (P.P.M - Parts Per Million)
 
+ ![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/sensor%20box%201.jpg)
+
 
 ### Sensor Box - 2
 
@@ -37,10 +39,25 @@ We collecting several data using above two sensors
 - Measuring water level hydroponic system
 - Measuring soil moisture
 
+ ![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/sensor%20box%202.jpg)
 
 ### Automation Box
 
 Sensor box three includes one component.
 - Low level trigger and node mcu is also use here
 
+ ![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Automation-box.jpg)
+
 ### Application Screenshots
+
+https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_1.png
+
+https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_2.png
+
+https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_3.png
+
+https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_4.png
+
+https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_5.png
+
+https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_6.png
