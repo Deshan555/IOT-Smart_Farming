@@ -4,6 +4,7 @@ Smart farming, which is based on IoT technologies, allows growers and farmers to
 
 Temperature, soil moisture, crop health, and so on) as well as automating the irrigation system. For example, if the soil moisture level falls, the farmer can use sensors to begin irrigation. The ability to predict production output allows for better product distribution planning. A smart greenhouse that monitors and controls the climate does away with the need for manual intervention. Predictive analytics in agriculture.
 
+![alt-text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Untitled%20Diagram.drawio.png)
 
 ### The Installation Procedure
 
