@@ -35,7 +35,7 @@ Data collected using these sensors includes:
 - Heat Index (also known as "feels-like" temperature)
 - Gas Level (P.P.M)
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/sensor%20box%201.jpg)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/sensor%20box%201-min.jpg)
 
 ## Sensor Box - 2 📦
 
@@ -47,27 +47,27 @@ Data collected using these sensors includes:
 - Water Level in hydroponic system
 - Soil Moisture
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/sensor%20box%202.jpg)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/sensor%20box%202-min.jpg)
 
 ## Automation Box 📦
 
 Sensor box three includes one component:
 - Low-level trigger and NodeMCU for automation purposes.
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Automation-box.jpg)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Automation-box-min.jpg)
 
 ## Application Screenshots 🖥️
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_1.png)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_1-min.png)
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_2.png)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_2-min.png)
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_3.png)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_3-min.png)
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_4.png)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_4-min.png)
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_5.png)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_5-min.png)
 
-![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_6.png)
+![alt text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Screenshot_6-min.png)
 
 Our IOT Smart Farming System provides farmers with the data and automation they need to make informed decisions and optimize their farming operations. Feel free to explore, contribute, and customize the system to suit your specific requirements. Happy farming and coding! 🌾🚜😊
