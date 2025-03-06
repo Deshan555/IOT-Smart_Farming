@@ -4,6 +4,8 @@ Welcome to the IOT Smart Farming System! This innovative solution is built on Io
 
 ![alt-text](https://github.com/Deshan555/IOT-Smart_Farming/blob/main/Application%20Screenshots/Untitled%20Diagram.drawio.png)
 
+web version of this project available in this repository : https://github.com/Deshan555/IOT-Dashboard.git
+
 ## Installation Procedure 📥
 
 1. **Download the Project Files**
